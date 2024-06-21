@@ -1,0 +1,8 @@
+{
+  "name": "pure-css-tailwind-experiment",
+  "scripts": {
+    "dev/server": "npx vite",
+    "dev/unocss": "npx @unocss/cli -w -o ./uno.css ./index.html",
+    "dev": "npm run dev/server & npm run dev/unocss"
+  }
+}

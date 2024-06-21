@@ -1,0 +1,56 @@
+* {
+	--0-5: 0.124rem;
+	--1: 0.25rem;
+	--1-5: 0.375rem;
+	--2: 0.5rem;
+	--2-5: 0.625rem;
+	--3: 0.75rem;
+	--3-5: 0.875rem;
+	--4: 1rem;
+	--5: 1.25rem;
+
+	--red-50: #fef2f2;
+	--red-100: #fee2e2;
+	--red-200: #fecaca;
+	--red-300: #fca5a5;
+	--red-400: #f87171;
+	--red-500: #ef4444;
+	--red-600: #dc2626;
+	--red-700: #b91c1c;
+	--red-800: #991b1b;
+	--red-900: #7f1d1d;
+	--red-950: #450a0a;
+	--red: var(--red-400);
+
+	--p: initial;
+	--px: var(--p, initial);
+	--py: var(--p, initial);
+	--pr: var(--px, initial);
+	--pl: var(--px, initial);
+	--pt: var(--py, initial);
+	--pb: var(--py, initial);
+
+	--text: initial;
+
+	padding-top: var(--pt, 0);
+	padding-right: var(--pr, 0);
+	padding-left: var(--pl, 0);
+	padding-bottom: var(--pb, 0);
+
+	color: var(--text);
+
+	&:hover {
+		--hover-p: var(--p);
+		--hover-px: var(--hover-p);
+		--hover-py: var(--hover-p);
+		--hover-pl: var(--hover-px);
+		--hover-pr: var(--hover-px);
+		--hover-pt: var(--hover-py);
+		--hover-pb: var(--hover-py);
+
+		padding-top: var(--hover-pt, 0);
+		padding-right: var(--hover-pr, 0);
+		padding-left: var(--hover-pl, 0);
+		padding-bottom: var(--hover-pb, 0);
+	}
+}
