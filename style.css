@@ -39,18 +39,148 @@
 
 	color: var(--text);
 
-	&:hover {
-		--hover-p: var(--p);
-		--hover-px: var(--hover-p);
-		--hover-py: var(--hover-p);
-		--hover-pl: var(--hover-px);
-		--hover-pr: var(--hover-px);
-		--hover-pt: var(--hover-py);
-		--hover-pb: var(--hover-py);
 
-		padding-top: var(--hover-pt, 0);
-		padding-right: var(--hover-pr, 0);
-		padding-left: var(--hover-pl, 0);
-		padding-bottom: var(--hover-pb, 0);
+
+}
+
+*:hover {
+	--hover-pl: var(--hover-px, var(--hover-p, var(--pl)));
+	--hover-pr: var(--hover-px, var(--hover-p, var(--pr)));
+	--hover-pt: var(--hover-py, var(--hover-p, var(--pt)));
+	--hover-pb: var(--hover-py, var(--hover-p, var(--pb)));
+
+	padding-top: var(--hover-pt, 0);
+	padding-right: var(--hover-pr, 0);
+	padding-left: var(--hover-pl, 0);
+	padding-bottom: var(--hover-pb, 0);
+}
+
+@media (min-width: 640px) {
+	* {
+		--sm-pl: var(--sm-px, var(--sm-p, var(--pl)));
+		--sm-pr: var(--sm-px, var(--sm-p, var(--pr)));
+		--sm-pt: var(--sm-py, var(--sm-p, var(--pt)));
+		--sm-pb: var(--sm-py, var(--sm-p, var(--pb)));
+
+		padding-top: var(--sm-pt, 0);
+		padding-right: var(--sm-pr, 0);
+		padding-left: var(--sm-pl, 0);
+		padding-bottom: var(--sm-pb, 0);
+	}
+
+	*:hover {
+		--sm-hover-pl: var(--sm-hover-px, var(--sm-hover-p, var(--pl)));
+		--sm-hover-pr: var(--sm-hover-px, var(--sm-hover-p, var(--pr)));
+		--sm-hover-pt: var(--sm-hover-py, var(--sm-hover-p, var(--pt)));
+		--sm-hover-pb: var(--sm-hover-py, var(--sm-hover-p, var(--pb)));
+
+		padding-top: var(--sm-hover-pt, 0);
+		padding-right: var(--sm-hover-pr, 0);
+		padding-left: var(--sm-hover-pl, 0);
+		padding-bottom: var(--sm-hover-pb, 0);
+	}
+}
+
+@media (min-width: 768px) {
+	* {
+		--md-pl: var(--md-px, var(--md-p, var(--pl)));
+		--md-pr: var(--md-px, var(--md-p, var(--pr)));
+		--md-pt: var(--md-py, var(--md-p, var(--pt)));
+		--md-pb: var(--md-py, var(--md-p, var(--pb)));
+
+		padding-top: var(--md-pt, 0);
+		padding-right: var(--md-pr, 0);
+		padding-left: var(--md-pl, 0);
+		padding-bottom: var(--md-pb, 0);
+	}
+
+	*:hover {
+		--md-hover-pl: var(--md-hover-px, var(--md-hover-p, var(--pl)));
+		--md-hover-pr: var(--md-hover-px, var(--md-hover-p, var(--pr)));
+		--md-hover-pt: var(--md-hover-py, var(--md-hover-p, var(--pt)));
+		--md-hover-pb: var(--md-hover-py, var(--md-hover-p, var(--pb)));
+
+		padding-top: var(--md-hover-pt, 0);
+		padding-right: var(--md-hover-pr, 0);
+		padding-left: var(--md-hover-pl, 0);
+		padding-bottom: var(--md-hover-pb, 0);
+	}
+}
+
+@media (min-width: 1024px) {
+	* {
+		--lg-pl: var(--lg-px, var(--lg-p, var(--pl)));
+		--lg-pr: var(--lg-px, var(--lg-p, var(--pr)));
+		--lg-pt: var(--lg-py, var(--lg-p, var(--pt)));
+		--lg-pb: var(--lg-py, var(--lg-p, var(--pb)));
+
+		padding-top: var(--lg-pt, 0);
+		padding-right: var(--lg-pr, 0);
+		padding-left: var(--lg-pl, 0);
+		padding-bottom: var(--lg-pb, 0);
+	}
+
+	*:hover {
+		--lg-hover-pl: var(--lg-hover-px, var(--lg-hover-p, var(--pl)));
+		--lg-hover-pr: var(--lg-hover-px, var(--lg-hover-p, var(--pr)));
+		--lg-hover-pt: var(--lg-hover-py, var(--lg-hover-p, var(--pt)));
+		--lg-hover-pb: var(--lg-hover-py, var(--lg-hover-p, var(--pb)));
+
+		padding-top: var(--lg-hover-pt, 0);
+		padding-right: var(--lg-hover-pr, 0);
+		padding-left: var(--lg-hover-pl, 0);
+		padding-bottom: var(--lg-hover-pb, 0);
+	}
+}
+
+@media (min-width: 1280px) {
+	* {
+		--xl-pl: var(--xl-px, var(--xl-p, var(--pl)));
+		--xl-pr: var(--xl-px, var(--xl-p, var(--pr)));
+		--xl-pt: var(--xl-py, var(--xl-p, var(--pt)));
+		--xl-pb: var(--xl-py, var(--xl-p, var(--pb)));
+
+		padding-top: var(--xl-pt, 0);
+		padding-right: var(--xl-pr, 0);
+		padding-left: var(--xl-pl, 0);
+		padding-bottom: var(--xl-pb, 0);
+	}
+
+	*:hover {
+		--xl-hover-pl: var(--xl-hover-px, var(--xl-hover-p, var(--pl)));
+		--xl-hover-pr: var(--xl-hover-px, var(--xl-hover-p, var(--pr)));
+		--xl-hover-pt: var(--xl-hover-py, var(--xl-hover-p, var(--pt)));
+		--xl-hover-pb: var(--xl-hover-py, var(--xl-hover-p, var(--pb)));
+
+		padding-top: var(--xl-hover-pt, 0);
+		padding-right: var(--xl-hover-pr, 0);
+		padding-left: var(--xl-hover-pl, 0);
+		padding-bottom: var(--xl-hover-pb, 0);
+	}
+}
+
+@media (min-width: 1536px) {
+	* {
+		--2xl-pl: var(--2xl-px, var(--2xl-p, var(--pl)));
+		--2xl-pr: var(--2xl-px, var(--2xl-p, var(--pr)));
+		--2xl-pt: var(--2xl-py, var(--2xl-p, var(--pt)));
+		--2xl-pb: var(--2xl-py, var(--2xl-p, var(--pb)));
+
+		padding-top: var(--2xl-pt, 0);
+		padding-right: var(--2xl-pr, 0);
+		padding-left: var(--2xl-pl, 0);
+		padding-bottom: var(--2xl-pb, 0);
+	}
+
+	*:hover {
+		--2xl-hover-pl: var(--2xl-hover-px, var(--2xl-hover-p, var(--pl)));
+		--2xl-hover-pr: var(--2xl-hover-px, var(--2xl-hover-p, var(--pr)));
+		--2xl-hover-pt: var(--2xl-hover-py, var(--2xl-hover-p, var(--pt)));
+		--2xl-hover-pb: var(--2xl-hover-py, var(--2xl-hover-p, var(--pb)));
+
+		padding-top: var(--2xl-hover-pt, 0);
+		padding-right: var(--2xl-hover-pr, 0);
+		padding-left: var(--2xl-hover-pl, 0);
+		padding-bottom: var(--2xl-hover-pb, 0);
 	}
 }
