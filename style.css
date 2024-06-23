@@ -31,6 +31,17 @@
 	up being overridden for the element, but not it's children.
 	*/
 	--p: initial;
+	--text: initial;
+
+	color: var(--text);
+}
+
+/*
+--------------------------------------------------------------------------------
+BOX ELEMENTS
+--------------------------------------------------------------------------------
+*/
+* {
 	/*
 	Since Tailwind has different variations for each axis, we can use the hability
 	of var() having a fallback value to prioritize some variables over another.
@@ -42,14 +53,11 @@
 	--pt: var(--py, initial);
 	--pb: var(--py, initial);
 
-	--text: initial;
-
 	padding-top: var(--pt, 0);
 	padding-right: var(--pr, 0);
 	padding-left: var(--pl, 0);
 	padding-bottom: var(--pb, 0);
 
-	color: var(--text);
 }
 
 *:hover {
