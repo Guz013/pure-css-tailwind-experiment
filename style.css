@@ -23,7 +23,7 @@
 	--red: var(--red-400);
 
 	/*
-	All "top level" variables have to be reset before they are used. This prenvents
+	All "top level" variables have to be reset before they are used. This prevents
 	from values of top elements affecting children elements, without this, all children
 	elements would have padding added if their parents has.
 
@@ -43,7 +43,7 @@ BOX ELEMENTS
 */
 * {
 	/*
-	Since Tailwind has different variations for each axis, we can use the hability
+	Since Tailwind has different variations for each axis, we can use the ability
 	of var() having a fallback value to prioritize some variables over another.
 	*/
 	--px: var(--p, initial);
