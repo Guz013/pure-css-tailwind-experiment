@@ -22,7 +22,19 @@
 	--red-950: #450a0a;
 	--red: var(--red-400);
 
+	/*
+	All "top level" variables have to be reset before they are used. This prenvents
+	from values of top elements affecting children elements, without this, all children
+	elements would have padding added if their parents has.
+
+	Since inline-styles have priority, when we specify --p on the html, this ends
+	up being overridden for the element, but not it's children.
+	*/
 	--p: initial;
+	/*
+	Since Tailwind has different variations for each axis, we can use the hability
+	of var() having a fallback value to prioritize some variables over another.
+	*/
 	--px: var(--p, initial);
 	--py: var(--p, initial);
 	--pr: var(--px, initial);
@@ -38,9 +50,6 @@
 	padding-bottom: var(--pb, 0);
 
 	color: var(--text);
-
-
-
 }
 
 *:hover {
@@ -53,6 +62,27 @@
 	padding-right: var(--hover-pr, 0);
 	padding-left: var(--hover-pl, 0);
 	padding-bottom: var(--hover-pb, 0);
+
+	/*
+	To "minify" the resulting CSS, we can also write them as following:
+	*/
+	padding-top: var(--hover-pt, var(--hover-px, var(--hover-p, var(--pt))));
+	padding-right: var(--hover-pr, var(--hover-px, var(--hover-p, var(--pr))));
+	padding-left: var(--hover-pl, var(--hover-py, var(--hover-p, var(--pl))));
+	padding-bottom: var(--hover-pb, var(--hover-py, var(--hover-p, var(--pb))));
+
+	padding:
+		var(--hover-pt, var(--hover-px, var(--hover-p, var(--pt))))
+		/* (comment breaks just to prevent reader's formatters from merging the lines) */
+		var(--hover-pr, var(--hover-px, var(--hover-p, var(--pr))))
+		/* */
+		var(--hover-pl, var(--hover-py, var(--hover-p, var(--pl))))
+		/* */
+		var(--hover-pb, var(--hover-py, var(--hover-p, var(--pb))))
+		/* */
+	;
+
+	padding: var(--hover-pt, var(--hover-px, var(--hover-p, var(--pt)))) var(--hover-pr, var(--hover-px, var(--hover-p, var(--pr)))) var(--hover-pl, var(--hover-py, var(--hover-p, var(--pl)))) var(--hover-pb, var(--hover-py, var(--hover-p, var(--pb))));
 }
 
 @media (min-width: 640px) {
@@ -83,6 +113,13 @@
 
 @media (min-width: 768px) {
 	* {
+		/*
+		Since values from the previous width size can be still be active, we have
+		to propagate them upwards the chain. We use again var() fallback value so
+		you can still specify a value just for this breakpoint.
+
+		We pretty much have to almost "simulate the browser's priorities".
+		*/
 		--md-pl: var(--md-px, var(--md-p, var(--sm-pl)));
 		--md-pr: var(--md-px, var(--md-p, var(--sm-pr)));
 		--md-pt: var(--md-py, var(--md-p, var(--sm-pt)));
