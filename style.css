@@ -69,10 +69,10 @@
 	}
 
 	*:hover {
-		--sm-hover-pl: var(--sm-hover-px, var(--sm-hover-p, var(--pl)));
-		--sm-hover-pr: var(--sm-hover-px, var(--sm-hover-p, var(--pr)));
-		--sm-hover-pt: var(--sm-hover-py, var(--sm-hover-p, var(--pt)));
-		--sm-hover-pb: var(--sm-hover-py, var(--sm-hover-p, var(--pb)));
+		--sm-hover-pl: var(--sm-hover-px, var(--sm-hover-p, var(--hover-pl)));
+		--sm-hover-pr: var(--sm-hover-px, var(--sm-hover-p, var(--hover-pr)));
+		--sm-hover-pt: var(--sm-hover-py, var(--sm-hover-p, var(--hover-pt)));
+		--sm-hover-pb: var(--sm-hover-py, var(--sm-hover-p, var(--hover-pb)));
 
 		padding-top: var(--sm-hover-pt, 0);
 		padding-right: var(--sm-hover-pr, 0);
@@ -83,10 +83,10 @@
 
 @media (min-width: 768px) {
 	* {
-		--md-pl: var(--md-px, var(--md-p, var(--pl)));
-		--md-pr: var(--md-px, var(--md-p, var(--pr)));
-		--md-pt: var(--md-py, var(--md-p, var(--pt)));
-		--md-pb: var(--md-py, var(--md-p, var(--pb)));
+		--md-pl: var(--md-px, var(--md-p, var(--sm-pl)));
+		--md-pr: var(--md-px, var(--md-p, var(--sm-pr)));
+		--md-pt: var(--md-py, var(--md-p, var(--sm-pt)));
+		--md-pb: var(--md-py, var(--md-p, var(--sm-pb)));
 
 		padding-top: var(--md-pt, 0);
 		padding-right: var(--md-pr, 0);
@@ -95,10 +95,10 @@
 	}
 
 	*:hover {
-		--md-hover-pl: var(--md-hover-px, var(--md-hover-p, var(--pl)));
-		--md-hover-pr: var(--md-hover-px, var(--md-hover-p, var(--pr)));
-		--md-hover-pt: var(--md-hover-py, var(--md-hover-p, var(--pt)));
-		--md-hover-pb: var(--md-hover-py, var(--md-hover-p, var(--pb)));
+		--md-hover-pl: var(--md-hover-px, var(--md-hover-p, var(--sm-hover-pl)));
+		--md-hover-pr: var(--md-hover-px, var(--md-hover-p, var(--sm-hover-pr)));
+		--md-hover-pt: var(--md-hover-py, var(--md-hover-p, var(--sm-hover-pt)));
+		--md-hover-pb: var(--md-hover-py, var(--md-hover-p, var(--sm-hover-pb)));
 
 		padding-top: var(--md-hover-pt, 0);
 		padding-right: var(--md-hover-pr, 0);
@@ -109,10 +109,10 @@
 
 @media (min-width: 1024px) {
 	* {
-		--lg-pl: var(--lg-px, var(--lg-p, var(--pl)));
-		--lg-pr: var(--lg-px, var(--lg-p, var(--pr)));
-		--lg-pt: var(--lg-py, var(--lg-p, var(--pt)));
-		--lg-pb: var(--lg-py, var(--lg-p, var(--pb)));
+		--lg-pl: var(--lg-px, var(--lg-p, var(--md-pl)));
+		--lg-pr: var(--lg-px, var(--lg-p, var(--md-pr)));
+		--lg-pt: var(--lg-py, var(--lg-p, var(--md-pt)));
+		--lg-pb: var(--lg-py, var(--lg-p, var(--md-pb)));
 
 		padding-top: var(--lg-pt, 0);
 		padding-right: var(--lg-pr, 0);
@@ -121,10 +121,10 @@
 	}
 
 	*:hover {
-		--lg-hover-pl: var(--lg-hover-px, var(--lg-hover-p, var(--pl)));
-		--lg-hover-pr: var(--lg-hover-px, var(--lg-hover-p, var(--pr)));
-		--lg-hover-pt: var(--lg-hover-py, var(--lg-hover-p, var(--pt)));
-		--lg-hover-pb: var(--lg-hover-py, var(--lg-hover-p, var(--pb)));
+		--lg-hover-pl: var(--lg-hover-px, var(--lg-hover-p, var(--md-hover-pl)));
+		--lg-hover-pr: var(--lg-hover-px, var(--lg-hover-p, var(--md-hover-pr)));
+		--lg-hover-pt: var(--lg-hover-py, var(--lg-hover-p, var(--md-hover-pt)));
+		--lg-hover-pb: var(--lg-hover-py, var(--lg-hover-p, var(--md-hover-pb)));
 
 		padding-top: var(--lg-hover-pt, 0);
 		padding-right: var(--lg-hover-pr, 0);
@@ -135,10 +135,10 @@
 
 @media (min-width: 1280px) {
 	* {
-		--xl-pl: var(--xl-px, var(--xl-p, var(--pl)));
-		--xl-pr: var(--xl-px, var(--xl-p, var(--pr)));
-		--xl-pt: var(--xl-py, var(--xl-p, var(--pt)));
-		--xl-pb: var(--xl-py, var(--xl-p, var(--pb)));
+		--xl-pl: var(--xl-px, var(--xl-p, var(--lg-pl)));
+		--xl-pr: var(--xl-px, var(--xl-p, var(--lg-pr)));
+		--xl-pt: var(--xl-py, var(--xl-p, var(--lg-pt)));
+		--xl-pb: var(--xl-py, var(--xl-p, var(--lg-pb)));
 
 		padding-top: var(--xl-pt, 0);
 		padding-right: var(--xl-pr, 0);
@@ -147,10 +147,10 @@
 	}
 
 	*:hover {
-		--xl-hover-pl: var(--xl-hover-px, var(--xl-hover-p, var(--pl)));
-		--xl-hover-pr: var(--xl-hover-px, var(--xl-hover-p, var(--pr)));
-		--xl-hover-pt: var(--xl-hover-py, var(--xl-hover-p, var(--pt)));
-		--xl-hover-pb: var(--xl-hover-py, var(--xl-hover-p, var(--pb)));
+		--xl-hover-pl: var(--xl-hover-px, var(--xl-hover-p, var(--lg-hover-pl)));
+		--xl-hover-pr: var(--xl-hover-px, var(--xl-hover-p, var(--lg-hover-pr)));
+		--xl-hover-pt: var(--xl-hover-py, var(--xl-hover-p, var(--lg-hover-pt)));
+		--xl-hover-pb: var(--xl-hover-py, var(--xl-hover-p, var(--lg-hover-pb)));
 
 		padding-top: var(--xl-hover-pt, 0);
 		padding-right: var(--xl-hover-pr, 0);
@@ -161,10 +161,10 @@
 
 @media (min-width: 1536px) {
 	* {
-		--2xl-pl: var(--2xl-px, var(--2xl-p, var(--pl)));
-		--2xl-pr: var(--2xl-px, var(--2xl-p, var(--pr)));
-		--2xl-pt: var(--2xl-py, var(--2xl-p, var(--pt)));
-		--2xl-pb: var(--2xl-py, var(--2xl-p, var(--pb)));
+		--2xl-pl: var(--2xl-px, var(--2xl-p, var(--xl-pl)));
+		--2xl-pr: var(--2xl-px, var(--2xl-p, var(--xl-pr)));
+		--2xl-pt: var(--2xl-py, var(--2xl-p, var(--xl-pt)));
+		--2xl-pb: var(--2xl-py, var(--2xl-p, var(--xl-pb)));
 
 		padding-top: var(--2xl-pt, 0);
 		padding-right: var(--2xl-pr, 0);
@@ -173,10 +173,10 @@
 	}
 
 	*:hover {
-		--2xl-hover-pl: var(--2xl-hover-px, var(--2xl-hover-p, var(--pl)));
-		--2xl-hover-pr: var(--2xl-hover-px, var(--2xl-hover-p, var(--pr)));
-		--2xl-hover-pt: var(--2xl-hover-py, var(--2xl-hover-p, var(--pt)));
-		--2xl-hover-pb: var(--2xl-hover-py, var(--2xl-hover-p, var(--pb)));
+		--2xl-hover-pl: var(--2xl-hover-px, var(--2xl-hover-p, var(--xl-hover-pl)));
+		--2xl-hover-pr: var(--2xl-hover-px, var(--2xl-hover-p, var(--xl-hover-pr)));
+		--2xl-hover-pt: var(--2xl-hover-py, var(--2xl-hover-p, var(--xl-hover-pt)));
+		--2xl-hover-pb: var(--2xl-hover-py, var(--2xl-hover-p, var(--xl-hover-pb)));
 
 		padding-top: var(--2xl-hover-pt, 0);
 		padding-right: var(--2xl-hover-pr, 0);
