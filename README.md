@@ -6,6 +6,8 @@ Without any build step, pre- or post-processor.
 
 ---
 
+## Why and how
+
 The idea is to utilize a combination of
 [CSS custom properties (variables)](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
 and [inline styling](https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/How_CSS_is_structured#inline_styles).
@@ -44,6 +46,8 @@ so having a way to customize without a build step, configuration file, or additi
 dependency, could be useful.
 
 ---
+
+## Progress
 
 All implementation code is available in the [`style.css`](./style.css) file, which
 contains comments explaining decisions and compromises. Just remember that it is a
