@@ -1,8 +1,8 @@
 # Tailwind in pure CSS
 
 This is a small learning and coding experiment of trying to recreate a similar
-feel and utility approach of Tailwind utility classes using just pure CSS.
-Without any build step, pre- or post-processor.
+feel and utility approach of [Tailwind](https://tailwindcss.com) utility classes
+using just pure CSS. Without any build step, pre- or post-processor.
 
 ## Why and how
 
