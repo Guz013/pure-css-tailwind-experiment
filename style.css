@@ -61,6 +61,10 @@ BOX ELEMENTS
 }
 
 *:hover {
+	/*
+	FIX ME: reset all variables to initial state, since parents can affect
+	the chain of fallback values
+	*/
 	--hover-pl: var(--hover-px, var(--hover-p, var(--pl)));
 	--hover-pr: var(--hover-px, var(--hover-p, var(--pr)));
 	--hover-pt: var(--hover-py, var(--hover-p, var(--pt)));
@@ -79,8 +83,7 @@ BOX ELEMENTS
 	padding-left: var(--hover-pl, var(--hover-py, var(--hover-p, var(--pl))));
 	padding-bottom: var(--hover-pb, var(--hover-py, var(--hover-p, var(--pb))));
 
-	padding:
-		var(--hover-pt, var(--hover-px, var(--hover-p, var(--pt))))
+	padding: var(--hover-pt, var(--hover-px, var(--hover-p, var(--pt))))
 		/* (comment breaks just to prevent reader's formatters from merging the lines) */
 		var(--hover-pr, var(--hover-px, var(--hover-p, var(--pr))))
 		/* */
