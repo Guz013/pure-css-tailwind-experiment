@@ -4,8 +4,6 @@ This is a small learning and coding experiment of trying to recreate a similar
 feel and utility approach of Tailwind utility classes using just pure CSS.
 Without any build step, pre- or post-processor.
 
----
-
 ## Why and how
 
 The idea is to utilize a combination of
@@ -45,8 +43,6 @@ and not hard-coded by the library. There will be always exceptions for designs s
 so having a way to customize without a build step, configuration file, or additional
 dependency, could be useful.
 
----
-
 ## Progress
 
 All implementation code is available in the [`style.css`](./style.css) file, which
@@ -61,6 +57,19 @@ Currently implemented utilities/features/ideas are:
 - Flex and Grid layout utilities;
 - Text colors;
 - Spacing scales;
+
+## Developing
+
+Since this repository is just a HTML and CSS file pretty much, you can use whatever
+tool or way you prefer to open/reload the files.
+
+If you have [NPM](https://npmjs.com) installed, the repository [provides a `package.json`](./package.json)
+to run a [Vite](https://vitejs.dev/) live server, for the [`index.html` file](./index.html),
+and [UnoCSS's CLI](https://unocss.dev/integrations/cli) to generate a `uno.css` file
+containing Tailwind utility classes. Just run `npm run dev`.
+
+If you use [Nix](https://nixos.org), the repository provides a [`flake.nix` with a
+dev shell](./flake.nix) to install [NodeJS](https://nodejs.org) on the current shell.
 
 ---
 
