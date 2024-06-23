@@ -38,6 +38,141 @@
 
 /*
 --------------------------------------------------------------------------------
+FLEX
+--------------------------------------------------------------------------------
+*/
+* {
+	/*
+	Creating something like this:
+	--display: initial;
+	display(--display);
+
+	Does not work, since it ends up making all elements inline (initial "display"'s
+	value). To make this work, it would be needed to "emulate" each elements default
+	value provided by browsers to properly reset "--display":
+
+	div {
+		--display: block;
+	}
+	span {
+		--display: inline;
+	}
+
+	etc. etc.
+
+	This would explode the size of this CSS file. So a possible "compromise" is just
+	using inline-styles normally to change the display property:
+
+	<div style="display:flex;/>
+
+	Also, other Tailwind's flex utilities are so simple that just using inline-styles
+	is probably better than creating utility variables. Things such as "grow" can be
+	easily used without adding too much characters from their Tailwind counterparts.
+
+	<div class="flex flex-wrap grow"/>
+	<div style="display:flex;flex-wrap:wrap;flex-grow:1;"/>
+	*/
+
+	/*
+	Flex basis can be similar to text colors and sizes:
+	*/
+	flex-basis: var(--basis);
+	/*
+	And then in the HTML just use the already defined sizes:
+	<div style="--basis:var(--1);"/>
+	*/
+
+	/*
+	The main thing that could be useful is making "alias variables", for example:
+
+	flex-grow: var(--grow);
+
+	Just to be able to make inline-styles be responsive and have state variations,
+	so things like --sm-grow, --hover-grow, --lg-hover-grow.
+	*/
+}
+
+/*
+--------------------------------------------------------------------------------
+GRID
+--------------------------------------------------------------------------------
+*/
+* {
+	/*
+	Similarly to flex elements, "display" should be set directly in the inline style:
+	<div style="display:grid;"/>
+
+	However, compared to flex, it can have a lot more space for pre-defining variables
+	that can be useful.
+	*/
+
+	/*
+	Grid template columns can just have a variable for the number of columns:
+	*/
+	--grid-cols: initial;
+	grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
+	/*
+	This ends up being very similar to Tailwind:
+
+	<div class="grid grid-cols-8"/>
+	<div style="display:grid;--grid-cols:8;"/>
+
+	-------
+	P.S: "grid-cols-none" and "grid-cols-subgrid" can be just placed directly in inline-styles,
+	they seem to be very rarely used nonetheless.
+	*/
+
+	/*
+	Other utilities follow a similar path.
+	*/
+
+	/* Grid Column Start / End */
+	--col-span: initial;
+	grid-column: span var(--col-span) / span var(--col-span);
+
+	/* Grid Template Rows */
+	--grid-rows: initial;
+	grid-template-rows: repeat(var(--grid-rows), minmax(0, 1fr));
+
+	/* Grid Row Start / End */
+	--row-span: initial;
+	grid-row: span var(--row-span) / span var(--row-span);
+
+	/* Grid Auto Flow */
+	--grid-flow: initial;
+	grid-auto-flow: var(--grid-flow);
+	/*
+	<div
+		style="display:grid;--grid-flow:row"
+		class="grid grid-flow-row"
+	/>
+	<div
+		style="display:grid;--grid-flow:column"
+		class="grid grid-flow-col"
+	/>
+	*/
+
+	/* Grid Auto Columns */
+	--auto-cols: initial;
+	grid-auto-columns: var(--auto-cols);
+	/*
+	<div
+		style="display:grid;--grid-flow:row;--auto-cols:auto;"
+		class="grid grid-flow-row auto-cols-auto"
+	/>
+	<div
+		style="display:grid;--grid-flow:column;--auto-cols:min-content"
+		class="grid grid-flow-col auto-cols-min"
+	/>
+
+	----
+	This also applies to Grid Auto Rows, just rename "cols" to "rows";
+	*/
+
+}
+
+/*
+--------------------------------------------------------------------------------
 BOX ELEMENTS
 --------------------------------------------------------------------------------
 */
@@ -96,6 +231,11 @@ BOX ELEMENTS
 	padding: var(--hover-pt, var(--hover-px, var(--hover-p, var(--pt)))) var(--hover-pr, var(--hover-px, var(--hover-p, var(--pr)))) var(--hover-pl, var(--hover-py, var(--hover-p, var(--pl)))) var(--hover-pb, var(--hover-py, var(--hover-p, var(--pb))));
 }
 
+/*
+--------------------------------------------------------------------------------
+RESPONSIVENESS
+--------------------------------------------------------------------------------
+*/
 @media (min-width: 640px) {
 	* {
 		--sm-pl: var(--sm-px, var(--sm-p, var(--pl)));
